@@ -1,5 +1,5 @@
 # Base image with CUDA support
-FROM nvidia/cuda:11.3-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:12.9.0-cudnn-devel-ubuntu20.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
