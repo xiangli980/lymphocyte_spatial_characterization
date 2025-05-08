@@ -5,7 +5,7 @@
 cache/
 # dataset/
 # output/
-logs/
+# logs/
 # data_*/
 # output_*/
 debug.log
