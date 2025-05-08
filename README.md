@@ -1,4 +1,4 @@
-# Spatial Characterization
+# Lymphocyte Spatial Characterization
 
 A toolkit for spatial characterization of tissue images, including cell segmentation, cell graph analysis, and patch registration.
 
