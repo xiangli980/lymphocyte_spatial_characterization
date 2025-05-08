@@ -2,6 +2,8 @@
 
 A toolkit for spatial characterization of tissue images, including cell segmentation, cell graph analysis, and patch registration.
 
+Codebase for paper "Computational staining of CD3/CD20 positive lymphocytes in human tissues with experimental confirmation in a genetically engineered mouse model"
+
 ## Components
 
 ### 1. Cell Segmentation (HoverNet)
