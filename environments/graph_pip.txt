@@ -1,0 +1,2 @@
+# Currently empty - all packages installed via conda
+# Add any pip-specific packages here if needed in the future

@@ -1,0 +1,11 @@
+name: env_reg
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - openslide
+  - numpy
+  - matplotlib
+  - pillow
+  - scikit-image
