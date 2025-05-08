@@ -3,14 +3,14 @@
 
 # directories
 cache/
-dataset/
-output/
-logs/
-data_*/
-output_*/
+#dataset/
+#output/
+#logs/
+#data_*/
+#output_*/
 debug.log
 
 # checkpoint paths
 *.npz
-*.png
+#*.png
 *.log
