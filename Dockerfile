@@ -16,7 +16,14 @@ RUN apt-get update && apt-get install -y \
     openslide-tools \
     python3-pip \
     python3-dev \
+    software-properties-common \
+    && add-apt-repository -y ppa:ubuntu-toolchain-r/test \
+    && apt-get update \
+    && apt-get install -y gcc-9 g++-9 libstdc++6 \
     && rm -rf /var/lib/apt/lists/*
+
+# Verify GLIBCXX version is available
+RUN strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX_3.4.29
 
 # Install Miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
@@ -31,8 +38,10 @@ COPY environments/ /app/environments/
 
 # Create conda environments from yml files and install additional pip packages
 # 1. HoverNet environment (cell_segmentation)
+# A6000 is compatible with pytorch 1.10.0 and torchvision 0.11.0 with CUDA 11.3
 RUN conda env create -f /app/environments/hovernet_env.yml && \
-    /opt/conda/envs/env_hover/bin/pip install -r /app/environments/hover_pip.txt
+    /opt/conda/envs/env_hover/bin/pip install -r /app/environments/hover_pip.txt && \
+    /opt/conda/envs/env_hover/bin/pip install torch==1.10.0 torchvision==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 
 # 2. Graph Tool environment (cell_graph)
 RUN conda env create -f /app/environments/graph_env.yml && \
