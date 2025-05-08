@@ -5,7 +5,7 @@
 cache/
 #dataset/
 #output/
-#logs/
+logs/
 #data_*/
 #output_*/
 debug.log
@@ -14,3 +14,4 @@ debug.log
 *.npz
 #*.png
 *.log
+*.tar
